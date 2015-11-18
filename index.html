@@ -41,35 +41,8 @@
 		</div>
 
 		<!-- Show the middle column with stock detail inside -->
-		<div id="middle-single-stock" class="container">
-			<div id="more-info-button">
-				<!-- Filter Search: <input type="text" ng-model="stockFilter"> -->
-				<h1>Stock Info</h1>
-				<button class="btn btn-primary">More Info</button>
-			</div>
-				<!-- Have Angular create one div for each property in this stock -->
-			<div id="stock-filter">
-				<div id="headers">
-					<p ng-repeat="value in valuesArray">{{value}}</p>
-					<!-- <p>Symbol:</p>
-					<p=>Bid:</p>
-					<p>Ask:</p>
-					<p>Change:</p>
-					<p>ADV:</p>
-					<p>Day Low:</p>
-					<p>Day High:</p>
-					<p>Year Low:</p>
-					<p>Year High:</p> -->
-				</div>
-				<div id="values" ng-repeat="detail in mainData" ng-class-even="'even'" ng-class-odd="'odd'">
-				  <!-- | filter:stockFilter"> --> 
-					<div class="stock-properties">
-						<div class="prop-value">
-							{{detail}}
-						</div>
-					</div>
-				</div>
-			</div>
+		<div id="middle-single-stock" class="container" ng-view>
+			
 		</div>
 
 		<div id="right-chart">

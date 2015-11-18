@@ -1,6 +1,23 @@
-var stockApp = angular.module('stocksApp', []);
+var stockApp = angular.module('stocksApp', ['ngRoute']);
 
-	stockApp.controller('stocksController', function ($scope, $http){
+
+	stockApp.config(function($routeProvider){
+		$routeProvider.when('/', {
+			templateUrl: 'stocksummary.html',
+			controller: 'stocksController'
+		}).
+		when('/stockdetail',{
+			templateUrl: 'stockdetail.html',
+			controller: 'stocksController'
+		}).
+		otherwise({
+			redirectTo: 'stocksummary.html'
+		});
+	})
+
+
+
+	stockApp.controller('stocksController', function ($scope, $http, $location){
 
 		$scope.getStocks = function(){
 			var encodedTickers = encodeURIComponent($scope.userStocks);
@@ -29,6 +46,8 @@ var stockApp = angular.module('stocksApp', []);
 				});
 			}
 			console.log($scope.dataList);
+
+			//Creating an array that will hold only values I want
 			$scope.mainData = [];
 			// symbol
 			$scope.mainData.push($scope.dataList[0].value);
@@ -56,13 +75,6 @@ var stockApp = angular.module('stocksApp', []);
 
 		
 
-
-
-
-
-
-
-
 		$scope.getChangeClass = function (change){
 			if(change.indexOf('+') > -1){
 				return 'change-positive';
@@ -70,5 +82,11 @@ var stockApp = angular.module('stocksApp', []);
 				return 'change-negative';
 			}
 		}
+
+		$scope.moreDetail = function(){
+			$location.path("/stockdetail")
+		}
+
+
 
 });

@@ -1,0 +1,20 @@
+<div id="more-info-button">
+	<!-- Filter Search: <input type="text" ng-model="stockFilter"> -->
+	<h1>Stock Info</h1>
+	<button class="btn btn-primary" ng-click="moreDetail()">More Info</button>
+</div>
+	<!-- Have Angular create one div for each property in this stock -->
+<div id="stock-filter">
+	<div id="headers">
+		<p ng-repeat="value in valuesArray">{{value}}</p>
+		
+	</div>
+	<div id="values" ng-repeat="detail in mainData" ng-class-even="'even'" ng-class-odd="'odd'">
+	  <!-- | filter:stockFilter"> --> 
+		<div class="stock-properties">
+			<div class="prop-value">
+				{{detail}}
+			</div>
+		</div>
+	</div>
+</div>
