@@ -1,0 +1,132 @@
+#wrapper{
+	width: 95%;
+	height: 95vh;
+	border: 1px solid green;
+	padding: 3px;
+	margin: 15px 5px 15px 30px;
+}
+
+#left-all-stocks{
+	width: 30%;
+	height: 95vh;
+	background-color: #e0e0e0;
+	float: left;
+}
+
+#get-stock-text{
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	margin-top: 20px;
+}
+
+#get-stock-input{
+	text-align: center;
+	padding: 5px;
+}
+
+#get-stock-input input{
+	width: 90%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.summaryQuote{
+	width: 100%;
+	padding: 10px 5% 10px 5%;
+	height: 80px;
+}
+
+.summaryQuote.even{
+	background: #f2f2f2;
+}
+
+.company-name{
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.float-left1{
+	float: left;
+	width: 65%;
+}
+
+.float-left2{
+	float: left;
+	width: 25%;
+	font-size: 16px;
+	line-height: 60px;
+}
+
+.stock-change.change-positive{
+	color: green;
+	text-align: right;
+}
+
+.stock-change.change-negative{
+	color: red;
+	text-align: right;
+}
+
+.stock-symbol{
+	text-transform: uppercase;
+}
+
+/*---------------------Stock Data Section----------------------*/
+
+#middle-single-stock{
+	float:left;
+	width: 40%;
+	overflow: scroll;
+}
+
+#more-info-button{
+	margin-top: 20px;
+	margin-left: 10%;
+	padding: 0px;
+	text-align: right;
+}
+
+h1{
+	text-align: center;
+}
+
+#stock-filter{
+	width: 90%;
+	margin: auto;
+	margin-top: 20px;
+}
+
+#headers{
+	float: left;
+	width: 30%;
+	font-size: 20px;
+}
+
+#headers p{
+	margin: 0px;
+	padding: 5px;
+}
+
+#values{
+	font-size: 20px;
+	float: left;
+	width: 70%;
+	padding: 5px;
+	text-transform: uppercase;
+}
+
+.odd{
+	background: #f2f2f2;
+}
+
+/*-----------Chart Section-----------*/
+#right-chart{
+	width: 30%;
+	float: left;
+	background: #e0e0e0;
+	height: 95vh;
+}
+
+

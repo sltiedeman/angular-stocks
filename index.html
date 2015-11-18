@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app="stocksApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>    
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/controller.js"></script>
+</head>
+
+<body ng-controller="stocksController">
+	<div id="wrapper">
+		<div id="left-all-stocks">
+			<form ng-submit="getStocks()">
+				<div id="get-stock-text">What stocks would you like to search for? 
+				</div>
+				<div id="get-stock-input">
+					<input type="text" ng-model="userStocks" placeholder="goog, msft, intc">
+				</div>
+			</form>
+			<div id="{{stock.Symbol}}" ng-click="loadStock(stock)" ng-repeat="stock in listOfStocks" ng-class-even="'even'" ng-class-odd="'odd'" class="summaryQuote">
+				<div class="float-left1">
+					<div class="company-name">
+						{{stock.Name}}
+					</div>
+					<div class="stock-symbol">
+						{{stock.Symbol}}
+					</div>
+				</div>
+				<div class="float-left2">
+					<div class="stock-change {{getChangeClass(stock.Change)}}">
+						{{stock.Change}}
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Show the middle column with stock detail inside -->
+		<div id="middle-single-stock" class="container">
+			<div id="more-info-button">
+				<!-- Filter Search: <input type="text" ng-model="stockFilter"> -->
+				<h1>Stock Info</h1>
+				<button class="btn btn-primary">More Info</button>
+			</div>
+				<!-- Have Angular create one div for each property in this stock -->
+			<div id="stock-filter">
+				<div id="headers">
+					<p ng-repeat="value in valuesArray">{{value}}</p>
+					<!-- <p>Symbol:</p>
+					<p=>Bid:</p>
+					<p>Ask:</p>
+					<p>Change:</p>
+					<p>ADV:</p>
+					<p>Day Low:</p>
+					<p>Day High:</p>
+					<p>Year Low:</p>
+					<p>Year High:</p> -->
+				</div>
+				<div id="values" ng-repeat="detail in mainData" ng-class-even="'even'" ng-class-odd="'odd'">
+				  <!-- | filter:stockFilter"> --> 
+					<div class="stock-properties">
+						<div class="prop-value">
+							{{detail}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="right-chart">
+			<h1>Charts</h1>
+		</div>
+
+
+
+	</div>
+
+	    
+</body>	
+</html>
