@@ -1,0 +1,17 @@
+<h1>Detailed Data</h1>
+
+
+<div id="stock-filter" >
+	<div id="headers">
+		<p ng-repeat="somevalue in expandedValueArray">{{somevalue}}</p>
+		
+	</div>
+	<div id="values" ng-repeat="detail in allData" ng-class-even="'even'" ng-class-odd="'odd'">
+	  <!-- | filter:stockFilter"> --> 
+		<div class="stock-properties">
+			<div class="prop-value">
+				{{detail.val}}
+			</div>
+		</div>
+	</div>
+</div>
